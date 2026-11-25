@@ -7,6 +7,7 @@
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="assets/display-font.css"><link rel="stylesheet" href="assets/body-font.css"><link rel="stylesheet" href="styles.css?v=3"><link rel="stylesheet" href="assets/hero-v3.css?v=3">
   <script defer src="assets/gsap.min.js"></script><script defer src="assets/lenis.min.js"></script><script defer src="app.js?v=3"></script>
+  <link rel="stylesheet" href="assets/description-v4.css?v=4"><script defer src="assets/description-v4.js?v=4"></script>
 </head>
 <body>
 <a class="skip-link" href="#description">Перейти к описанию</a>
@@ -41,13 +42,33 @@
   </section>
 
   <section id="description" class="description-section" aria-labelledby="description-title">
-    <div class="description-intro"><h2 id="description-title">БЛИЖЕ<br><span>К САМОМУ<br>ВАЖНОМУ</span></h2><div class="description-copy"><p class="large-copy">Вы знаете его привычки.<br>Он знает, кто рядом.</p><p>У него есть любимое место, свой ритм и характер. У вас — желание заботиться каждый день.</p></div></div>
-    <div class="details-list">
-      <details open><summary><span>Знакомство с продуктом</span><span class="plus" aria-hidden="true"></span></summary><div class="details-body"><p>Mr. Buffalo с индейкой — корм для кошек с чувствительным пищеварением.</p><p>С индейкой. Для того самого кота, который каждый день рядом.</p></div></details>
-      <details><summary><span>Состав и пищевая ценность</span><span class="plus" aria-hidden="true"></span></summary><div class="details-body"><p>Полный состав и пищевую ценность смотрите на упаковке продукта.</p></div></details>
-      <details><summary><span>Как кормить</span><span class="plus" aria-hidden="true"></span></summary><div class="details-body"><p>Рекомендации по кормлению и хранению смотрите на упаковке продукта.</p></div></details>
+    <div class="close-story">
+      <div class="close-copy"><h2 id="description-title">БЛИЖЕ<br>К САМОМУ<br><span>ВАЖНОМУ</span></h2><p class="close-lead">Вы знаете его привычки.<br>Он знает, кто рядом.</p><p class="close-body">Любимое место у окна. Особенный взгляд. Свой характер. Из этих маленьких вещей складывается ваша большая история.</p></div>
+      <div class="close-portrait"><span class="close-backword" aria-hidden="true">РЯДОМ</span><img src="assets/portrait-restored-v2.webp" width="1122" height="1402" alt="Мужчина в бирюзовой толстовке держит кота — герой упаковки Mr. Buffalo" loading="lazy"><span class="close-stamp">Ему — быть собой<br>Вам — быть рядом</span></div>
+      <div class="close-caption"><span>ЕГО ПРИВЫЧКИ ВЫ ЗНАЕТЕ НАИЗУСТЬ</span><span>С ЕГО КОРМОМ ПОЗНАКОМИМСЯ БЛИЖЕ</span></div>
     </div>
-    <div class="description-end"><span>ЕГО ХАРАКТЕР. ВАША ЗАБОТА.</span><a href="#feedback" class="text-link">Есть вопрос? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div>
+    <div class="food-editorial">
+      <div class="food-name"><h3>ТОТ САМЫЙ<br><span>С ИНДЕЙКОЙ</span></h3><p>Mr. Buffalo для кошек<br>с чувствительным пищеварением</p></div>
+      <div class="food-notes"><div><h4>Что внутри</h4><p>Полный состав и пищевую ценность смотрите на упаковке продукта.</p></div><div><h4>Каждый день</h4><p>Рекомендации по кормлению и хранению — на упаковке. Детали всегда под рукой.</p></div><a class="text-link" href="#feedback">Спросить о корме <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div>
+    </div>
+    <section class="qr-story" aria-labelledby="qr-title">
+      <div class="qr-heading"><h3 id="qr-title">НА УПАКОВКЕ — КОД<br>ЗА НИМ — <span>ЦЕЛЫЙ МИР</span></h3><p>Корм в ваших руках.<br>Его страница — в вашем телефоне.</p></div>
+      <div class="qr-experience">
+        <div class="qr-control-side"><p class="qr-invitation">Две стороны упаковки.<br>Два коротких пути к важному.</p>
+          <div class="qr-tickets" role="group" aria-label="Выберите сторону упаковки для предпросмотра перехода">
+            <button class="qr-ticket" type="button" data-qr-side="front" aria-pressed="true" aria-controls="qr-preview"><span class="qr-ticket-label">Лицевая сторона</span><img src="assets/qr-01-front.svg" width="180" height="180" alt="QR: https://www.mrbuffalo.ru/q/01/f" loading="lazy"><span class="qr-ticket-caption">Знакомство с кормом</span><span class="qr-ticket-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span></button>
+            <button class="qr-ticket" type="button" data-qr-side="back" aria-pressed="false" aria-controls="qr-preview"><span class="qr-ticket-label">Оборотная сторона</span><img src="assets/qr-01-back.svg" width="180" height="180" alt="QR: https://www.mrbuffalo.ru/q/01/b" loading="lazy"><span class="qr-ticket-caption">Сразу к описанию</span><span class="qr-ticket-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span></button>
+          </div>
+          <p class="qr-choose-hint">Нажмите на код — посмотрите, куда он ведёт.</p>
+          <ol class="qr-steps"><li><span>1</span>Найдите QR на упаковке</li><li><span>2</span>Наведите камеру телефона</li><li><span>3</span>Откройте страницу своего корма</li></ol>
+        </div>
+        <div id="qr-preview" class="qr-preview" data-side="front">
+          <div class="qr-phone" aria-hidden="true"><div class="qr-phone-camera"></div><div class="qr-phone-front"><img class="qr-phone-photo" src="assets/hero-film-poster.webp" width="1920" height="1080" alt="" loading="lazy"><img class="qr-phone-logo" src="assets/brand-logo.svg" width="120" height="48" alt="" loading="lazy"><span>Я ВЫБИРАЮ<br><b>САМ</b></span></div><div class="qr-phone-back"><span>БЛИЖЕ<br>К САМОМУ<br><b>ВАЖНОМУ</b></span><img src="assets/portrait-restored-v2.webp" width="1122" height="1402" alt="" loading="lazy"></div><div class="qr-phone-bottom"></div></div>
+          <div class="qr-destination" aria-live="polite" aria-atomic="true"><p class="qr-destination-title">Сначала — знакомство</p><p class="qr-destination-copy">Лицевой код открывает начало страницы именно этого продукта.</p><a class="text-link qr-destination-link" href="#">Посмотреть начало <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div>
+        </div>
+      </div>
+      <div class="qr-footnote"><p>QR-сервис готовится к запуску. Здесь показано, как будут работать переходы с упаковки.</p><span>С УПАКОВКИ — ПРЯМО К СВОЕМУ MR. BUFFALO</span></div>
+    </section>
   </section>
 
   <section id="feedback" class="feedback-section" aria-labelledby="feedback-title">

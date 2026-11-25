@@ -6,6 +6,8 @@
 
 Видео-пример и логотип: https://www.mrbuffalo.ru/; видео /site/assets/videos/cat01.mp4. Использованы по запросу пользователя. Документы: https://www.mrbuffalo.ru/about/conditions/. Сертификат внешнего сайта бренда требует исправления владельцем.
 
+QR01 SVG скопированы из утверждённого выпуска v3 без изменения адресов: /q/01/f и /q/01/b. Перенаправления на домене ещё не подключены; на странице показан интерактивный предпросмотр.
+
 Публикация: GitHub Pages, ветка `gh-pages`, корень `/`.
 
 Шрифты Oswald и Golos Text — SIL OFL; лицензии в `assets/`. GSAP 3.13.0: https://gsap.com/standard-license. Lenis 1.3.15: MIT, https://github.com/darkroomengineering/lenis.
