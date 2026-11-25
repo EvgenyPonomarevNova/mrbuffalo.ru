@@ -20,6 +20,10 @@ PHP 8.3 / Apache, MySQL 8.0 и nginx. Требования сверены с htt
 
 Тома `mrbuffalo-local_site` и `mrbuffalo-local_database` сохраняют ядро, upload и БД при остановке/пересоздании контейнеров. Не удалять тома и не выполнять `down -v`, если нужны данные. Папка `local/` подключена для собственного кода только на чтение; редактировать её нужно в репозитории.
 
+Если Docker Desktop сообщает об отсутствии виртуализации, проверить `Get-CimInstance Win32_Processor | Select-Object VirtualizationFirmwareEnabled`. При `False` необходимо включить аппаратную виртуализацию в BIOS/UEFI (SVM/AMD-V для AMD, VT-x для Intel), перезагрузить компьютер и снова запустить Docker Desktop. Авторизация в Docker Hub эту проблему не устраняет.
+
+В GitHub Actions есть `Docker smoke check`: сборка и запуск контейнеров, проверка расширений PHP и соединения с MySQL, проверка всех восьми Host и якоря `description`. Проверка выполняется на Linux runner и не заменяет запуск на конкретном Windows-компьютере.
+
 ## Поддомены и QR
 
 Технические адреса: `http://product-01.localhost:8088/` … `http://product-08.localhost:8088/`. Современный браузер обычно направляет `.localhost` на loopback. Если системный resolver этого не делает, для CLI использовать `curl.exe --resolve product-01.localhost:8088:127.0.0.1 http://product-01.localhost:8088/`, а для браузера добавить нужные имена в hosts.
