@@ -1,0 +1,35 @@
+name: Docker smoke check
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Start isolated environment
+        shell: pwsh
+        run: ./scripts/local.ps1 up
+      - name: Verify runtime and eight hostnames
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker compose --env-file .local/.env exec -T web php /opt/mrbuffalo/check.php
+          docker compose --env-file .local/.env exec -T web php -l /var/www/html/index.php
+          for number in $(seq -w 1 8); do
+            host="product-$(printf '%02d' "$number").localhost"
+            curl --fail --silent --show-error --resolve "$host:8088:127.0.0.1" "http://$host:8088/" > /tmp/mrbuffalo.html
+            grep -q 'id="description"' /tmp/mrbuffalo.html
+            grep -q 'product-08.localhost:8088/' /tmp/mrbuffalo.html
+          done
+      - name: Logs on failure
+        if: failure()
+        run: docker compose --env-file .local/.env logs --tail 80
+      - name: Stop CI containers
+        if: always()
+        run: docker compose --env-file .local/.env down
