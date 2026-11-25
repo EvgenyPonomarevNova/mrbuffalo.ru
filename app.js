@@ -29,8 +29,8 @@
       gsap.ticker.add(tick);
       entrance = gsap.context(() => {
         gsap.from('.hero-copy', {y:24, duration:1.05, ease:'expo.out', clearProps:'transform'});
-        gsap.from('.hero-photo', {y:22, duration:1.25, ease:'expo.out', clearProps:'transform'});
-        gsap.from('.marketplace-group', {y:30, rotation:0, duration:1.2, ease:'expo.out', clearProps:'transform'});
+        gsap.from('.market', {x:24, stagger:.12, duration:1.1, ease:'expo.out', clearProps:'transform'});
+        
       });
     }
     syncVideo();
@@ -65,17 +65,20 @@
   document.querySelectorAll('[data-market]').forEach(button => {
     button.addEventListener('click', () => {
       clearTimeout(timeout);
-      document.querySelector('#toast-title').textContent = `${button.dataset.market} — скоро здесь`;
+      document.querySelector('#toast-title').textContent = button.dataset.market;
       toast.classList.add('visible');
       timeout = setTimeout(() => toast.classList.remove('visible'), 10000);
     });
   });
   toast.querySelector('button').addEventListener('click', () => { clearTimeout(timeout); toast.classList.remove('visible'); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape') toast.classList.remove('visible'); });
+  const privacy = document.querySelector('.privacy-dialog');
+  document.querySelector('[data-open-privacy]').addEventListener('click', () => { lenis?.stop(); privacy.showModal(); });
+  privacy.querySelector('.privacy-close').addEventListener('click', () => privacy.close());
+  privacy.addEventListener('close', () => lenis?.start());
   document.querySelector('.feedback-form').addEventListener('submit', event => {
     event.preventDefault();
-    event.currentTarget.reset();
-    document.querySelector('.form-status').textContent = 'Готово! Так будет выглядеть подтверждение. Это демонстрация: сообщение не отправлено, введённые данные очищены.';
+    document.querySelector('.form-status').textContent = 'Сообщение не отправлено: форма пока не принимает обращения. Связаться с брендом можно на mrbuffalo.ru.';
   });
   window.addEventListener('pagehide', () => { video.pause(); lenis?.destroy(); entrance?.revert(); if (tick && window.gsap) gsap.ticker.remove(tick); clearTimeout(timeout); });
   window.addEventListener('pageshow', event => { if (event.persisted) configureMotion(); });
